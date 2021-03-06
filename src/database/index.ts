@@ -9,6 +9,10 @@ export default async ():Promise<Connection> =>
             let newObj: ConnectionOptions
             newObj = {
                 type: 'postgres',
+                username:process.env.USER,
+                password:process.env.PASSWORD,
+                host:process.env.HOST,
+                database:process.env.DATABASE,
                 url:  process.env.DATABASE_URL,
                 migrations:
                 [
@@ -20,6 +24,8 @@ export default async ():Promise<Connection> =>
                     migrationsDir:"./dist/database/migrations"
                 }
             }
+
+            console.log(newObj)
 
             return newObj
         }
