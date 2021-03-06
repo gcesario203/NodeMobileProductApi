@@ -22,7 +22,7 @@ export class CreateProduct1614987634925 implements MigrationInterface {
                     },
                     {
                         name:"preco",
-                        type:"double",
+                        type:"float",
                         isNullable: false
                     },
                     {
