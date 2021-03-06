@@ -23,6 +23,9 @@ export default async ():Promise<Connection> =>
                 },
                 extra: {
                     ssl: true
+               },
+               ssl:{
+                   rejectUnauthorized:false
                }
             }
 
