@@ -14,9 +14,11 @@
     "yup": "^0.32.9"
   },
   "scripts": {
+    "start": "tsc -p .&&ts-node dist/server.js",
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts",
     "typeorm": "ts-node-dev node_modules/typeorm/cli.js",
-    "test": "set NODE_ENV=test&&jest"
+    "test": "set NODE_ENV=test&&jest",
+    "build":"tsc -p ."
   },
   "devDependencies": {
     "@types/express": "^4.17.11",
