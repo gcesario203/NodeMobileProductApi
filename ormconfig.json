@@ -9,5 +9,6 @@
     "cli":
     {
         "migrationsDir":"./dist/database/migrations"
-    }
+    },
+    "ssl":{"rejectUnauthorized":false}
 }
