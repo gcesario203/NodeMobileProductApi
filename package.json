@@ -14,7 +14,7 @@
     "typeorm": "^0.2.31"
   },
   "scripts": {
-    "start": "node dist/server.js",
+    "start": "yarn build && ts-node dist/server.js",
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts",
     "typeorm": "ts-node-dev node_modules/typeorm/cli.js",
     "test": "set NODE_ENV=test&&jest",
