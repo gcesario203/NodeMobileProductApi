@@ -3,9 +3,9 @@
     "url":"postgres://teetrzazdpbmzq:08833973126bd34e405a5b38dcb0bdf14119a71abc3409b565f2aaad1fcaf6da@ec2-3-222-127-167.compute-1.amazonaws.com:5432/d2i4ccg4i6h5t0",
     "migrations":
     [
-        "./dist/database/migrations/**.ts"
+        "./dist/database/migrations/**.js"
     ],
-    "entities":["./dist/models/**.ts"],
+    "entities":["./dist/models/**.js"],
     "cli":
     {
         "migrationsDir":"./dist/database/migrations"
