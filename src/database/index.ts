@@ -4,10 +4,13 @@ export default async ():Promise<Connection> =>
 {
     const defaultOptions = await getConnectionOptions()
 
-    return createConnection(
-        Object.assign(defaultOptions,
-            {
-                database:process.env.NODE_ENV === 'test' ? "aulaTeste" : defaultOptions.database
-            })
-    );
+    const getOptions = async () => {
+        if (process.env.DATABASE_URL) {
+          Object.assign(defaultOptions, { url: process.env.DATABASE_URL });
+        }
+        return defaultOptions;
+      };
+    const teste = await getOptions();
+    
+    return createConnection(teste);
 }
