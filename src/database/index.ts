@@ -20,7 +20,10 @@ export default async ():Promise<Connection> =>
                 cli:
                 {
                     migrationsDir:"./dist/database/migrations"
-                }
+                },
+                extra: {
+                    ssl: true
+               }
             }
 
             console.log(newObj)
