@@ -22,7 +22,7 @@ export default async ():Promise<Connection> =>
     },
                 ssl:{rejectUnauthorized:false}
             }
-            console.log(defaultOptions)
+            console.log(newObj)
             return newObj
 
           
