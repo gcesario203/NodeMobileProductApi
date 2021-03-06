@@ -1,4 +1,4 @@
-import {Connection, createConnection, getConnectionOptions} from 'typeorm';
+import {Connection, ConnectionOptions, createConnection, getConnectionOptions} from 'typeorm';
 
 export default async ():Promise<Connection> =>
 {
@@ -6,7 +6,22 @@ export default async ():Promise<Connection> =>
 
     const getOptions = async () => {
         if (process.env.DATABASE_URL) {
-          Object.assign(defaultOptions, { url: process.env.DATABASE_URL });
+            let newObj: ConnectionOptions
+            newObj = {
+                type: 'postgres',
+                url:  process.env.DATABASE_URL,
+                migrations:
+                [
+                    './dist/database/migrations/**.js'
+                ],
+                entities:['./dist/models/**.js'],
+                cli:
+                {
+                    migrationsDir:"./dist/database/migrations"
+                }
+            }
+
+            return newObj
         }
         return defaultOptions;
       };
