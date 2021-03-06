@@ -7,9 +7,9 @@
     "database": "aula", 
     "migrations":
     [
-        "./dist/database/migrations/**.js"
+        "./dist/database/migrations/**.ts"
     ],
-    "entities":["./dist/models/**.js"],
+    "entities":["./dist/models/**.ts"],
     "cli":
     {
         "migrationsDir":"./dist/database/migrations"
