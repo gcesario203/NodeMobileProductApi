@@ -7,9 +7,7 @@ export default async ():Promise<Connection> =>
     const getOptions = async () => {
         if (process.env.DATABASE_URL) {
           Object.assign(defaultOptions,
-            { url: process.env.DATABASE_URL, ssl:{rejectUnauthorized: false}, extra: {
-                ssl: true
-           } });
+            { url: process.env.DATABASE_URL, ssl:{rejectUnauthorized: false}});
 
           console.log(defaultOptions)
         }
